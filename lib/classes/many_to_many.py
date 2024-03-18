@@ -65,7 +65,8 @@ class Customer:
         return self._orders
     
     def coffees(self):
-        return list({order.coffee for order in self.orders()})
+        return list(set([order.coffee for order in self.orders()]))
+
 
 class Order:
     def __init__(self, customer, coffee, price):
